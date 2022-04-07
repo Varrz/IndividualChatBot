@@ -239,7 +239,7 @@ class ChatApplication:
         :type _event: Event or None
         :return None:
         """
-
+        removableWords = ["what", "what's", "the", "is", "that", "this", "a", "an", "are", "made", "who", "where", "why", "how", "quell", "quelle"] # key terms to exclude from subject search
         msg: str = self.message_entry.get()
         self.message_entry.delete(0, END)
 
@@ -261,16 +261,13 @@ class ChatApplication:
                 if msgTranslated.src != "en":
                     msg = ps(msgTranslated.text)
                     origmsg = msgTranslated.text
-                    print(origmsg)
                     lang = msgTranslated.src
                 else:
                     msg = ps(msg)
-                    print(msg)
 
                 category: str = fc(msg)
 
                 # question / wikipedia handling
-                removableWords = ["what", "what's", "the", "is", "that", "this", "a", "an", "are", "made", "who", "where", "why", "how", "quell", "quelle"] # key terms to exclude from subject search
                 if origmsg.split()[0].lower() in ["what", "what's", "quell", "quelle", "with"]:
                     category = "question"
                 if category == "question":

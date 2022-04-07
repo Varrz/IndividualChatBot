@@ -16,7 +16,6 @@ Firstly download the repository. Then run the "Main.py" file.
 ## Wikipedia API
 I've incorporated the Wikipedia API into the chat bot to be able to handle generic questions. The previous iteration of this assignment had no capabilities to answer questions so this is quite an improvement. Once the chat bot identifies the prompt as a question, it will try to parse the subject from the sentence and retrieve a 1 sentence summary from the subject's wikipedia page. If the chat bot can't identify a subject or if the subject is too broad, it will ask the user to rephrase in a more specific manner.
 
-(get it to be like "I would suggest a parka" and then be like "what is a parka" ... "what is a parka in terms of clothing" ...)
 
 ## Google Translate API
 I have also implemented the googletrans API which uses data from Google Translate to support dialogue with the chat bot in any language. The user can ask the chat bot anything in their native language and will receive a response back in that same language. It works dynamically meaning that the user can switch between languages mid-conversation and the bot will be able to identify the new language and respond accordingly. As with most language software the translations aren't always perfect but it's sufficient for our chat bot.
